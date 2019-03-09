@@ -1,2 +1,2 @@
 # learnyounode
-Node practive
+Node practice
