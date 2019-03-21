@@ -1,7 +1,8 @@
 var fs = require('fs');
+var module = require('module');
 
-module.exports.myModule = function(dir, ext, callback) {
-	
+module.exports.myModule = function(dir, ext ,callback) {
+	fs.readdir(dir, fucntion);
 }
 
 /*
