@@ -1,9 +1,18 @@
-var fs = require('fs');
-var module = require('module');
+var dir = process.argv[2];
+var extFilter = process.argv[3];
+var myModule = require('./myModule.js');	
 
-module.exports.myModule = function(dir, ext ,callback) {
-	fs.readdir(dir, fucntion);
+var callback = function(err, list) {
+	if (err) {
+		throw err;
+	} else {
+		console.log(list);
+	}
+	//for loop list.length and console.log one per line
+	
 }
+
+myModule(dir, extFilter, callback);
 
 /*
 This requires 2 files to complete
@@ -15,5 +24,6 @@ This requires 2 files to complete
 
 4. Create a module file to do most of work.
 5. File must export 1 function that takes 3 args(dir, ext, callback func
-6. 
+
+https://www.youtube.com/watch?v=F9jxoNA-R4Q
 */
