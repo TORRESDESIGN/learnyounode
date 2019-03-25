@@ -7,7 +7,6 @@ fs.readdir(filePath, function callback(err, list){
 	if (err) {
 		throw err;
 	} else {
-		path.extname(list);
 		newList = list.filter(function ext(file) {
 			//path.extname(file).includes(fileExt);
 			if (file.endsWith(fileExt)) {
