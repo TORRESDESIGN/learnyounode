@@ -7,7 +7,6 @@ module.exports = function(dir, extFilter, callback) {
 		if (err) {
 			return callback(err);
 		} else {
-			path.ext(list);
 			return callback(null, list);
 		}
 	});
