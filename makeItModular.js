@@ -6,7 +6,7 @@ var callback = function(err, list) {
 	if (err) {
 		throw err;
 	} else {
-		console.log(list);
+		list.map(file => console.log(file));
 	}
 	//for loop list.length and console.log one per line
 	
@@ -25,5 +25,20 @@ This requires 2 files to complete
 4. Create a module file to do most of work.
 5. File must export 1 function that takes 3 args(dir, ext, callback func
 
-https://www.youtube.com/watch?v=F9jxoNA-R4Q
+-------------alternate version to mine-----------
+
+var filterFn = require('./solution_filter.js')
+var dir = process.argv[2]
+var filterStr = process.argv[3]
+
+filterFn(dir, filterStr, function (err, list) {
+	if (err) {
+	return console.error('There was an error:', err)
+	}
+
+	list.forEach(function (file) {
+	console.log(file)
+	})
+})
 */
+
