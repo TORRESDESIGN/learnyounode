@@ -1,2 +1,2 @@
 # learnyounode
-Node practice
+Node practice from https://nodeschool.io/
