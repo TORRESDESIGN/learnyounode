@@ -2,7 +2,8 @@ const http = require('http');
 const url = [process.argv[2], process.argv[3], process.argv[4]];
 let results = [];
 let count = 0;
-url.forEach(item => {
+
+url.forEach((item, index) => {
 	
 	http.get(item, (res) => {
 		res.setEncoding('utf8');
@@ -15,8 +16,8 @@ url.forEach(item => {
 			//console.log(body);
 			if (res.statusCode == 200) {
 				count += 1;
-				results.push(body);
-				if (count >= 3) {
+				results[index] = body;
+				if (count == url.length) {
 					results.forEach( item => console.log(item));
 				}
 			}
