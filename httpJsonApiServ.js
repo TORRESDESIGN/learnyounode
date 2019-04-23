@@ -10,8 +10,19 @@ var server = http.createServer((req, res) => {
 	if (req.method == 'GET') {
 		res.writeHead(200, { 'content-type': 'application/json' });
 		var myUrl = url.parse(req.url, true);
-		console.log(myUrl);
-		res.end('ok');// shows url data now
+		if (myUrl.pathname == '/api/parsetime') {
+			console.log(myUrl.query.iso);
+			console.log('this is unixtime');
+			res.end('..completed');// shows url data now
+		} else if (myUrl.pathname == '/api/unixtime') {
+			console.log(myUrl.query.iso);
+			console.log('this is not unixtime');
+			res.end('..completed');// shows url data now
+		} else {
+			console.log('I got nothing');
+		}
+		//console.log(myUrl);
+		
 	}
 });
 server.listen(port);
